@@ -1,0 +1,1 @@
+export { default as Seaweed2 } from './Seaweed2'

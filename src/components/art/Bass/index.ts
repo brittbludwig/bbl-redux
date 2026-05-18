@@ -1,0 +1,1 @@
+export { default as Bass } from './Bass'

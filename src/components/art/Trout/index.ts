@@ -1,0 +1,1 @@
+export { default as Trout } from './Trout'
