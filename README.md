@@ -1,65 +1,84 @@
-# My Vite React Router App
+# BrittanyLudwig.com — Redux
 
-This project is a simple React application built with Vite and React Router. It serves as a template for creating single-page applications with routing capabilities.
+A modern refactor of my personal portfolio site, originally built in 2020. This version rebuilds the site from the ground up using a current React + TypeScript + Vite stack, with an updated component architecture, Tailwind CSS v4 for styling, and a leaner, more maintainable codebase.
 
-## Features
+> 🔎 **Compare with the original:** [github.com/brittbludwig/bbl](https://github.com/brittbludwig/bbl)
+>
+> The original 2020 site is preserved as-is for reference. This `bbl-redux` repo is a side-by-side modernization of the same concept — same playful, scroll-driven storytelling, but with updated tooling, patterns, and accessibility.
 
-- Fast development with Vite
-- Client-side routing with React Router
-- TypeScript support
+## What's new vs. the 2020 version
+
+| Area | 2020 (`bbl`) | 2026 (`bbl-redux`) |
+| --- | --- | --- |
+| Build tool | Create React App | Vite |
+| Language | JavaScript | TypeScript |
+| Styling | SCSS modules | Tailwind CSS v4 |
+| State / context | Class components + ad-hoc state | Hooks + typed React Context |
+| Component model | Monolithic section components | Composable `Container.Inner` / `Column` / `Panel` primitives |
+| Animation | CSS + manual scroll math | Reusable `useParallax`, `useSection` hooks + Tailwind keyframes |
+| Imports | Relative paths | Path aliases (`$hooks`, `$images`, `$types`, etc.) |
+
+## Tech Stack
+
+- **Vite** — fast dev server + build
+- **React 18 + TypeScript**
+- **Tailwind CSS v4** (with `@theme` custom animations)
+- **React Router** for routing
+- Custom hooks for parallax and active-section tracking
 
 ## Project Structure
 
 ```
-my-vite-react-router-app
+bbl-redux
 ├── src
-│   ├── main.tsx          # Entry point of the application
-│   ├── App.tsx           # Main App component with routing
-│   ├── routes            # Contains route components
-│   │   ├── Home.tsx      # Home page component
-│   │   └── NotFound.tsx   # 404 Not Found component
-│   └── types             # Custom types and interfaces
-│       └── index.ts
-├── index.html            # Main HTML file
-├── package.json          # npm configuration
-├── tsconfig.json         # TypeScript configuration
-└── vite.config.ts        # Vite configuration
+│   ├── main.tsx                # Entry point
+│   ├── App.tsx                 # Root component
+│   ├── components
+│   │   ├── sections/           # Section1–Section7 page sections
+│   │   ├── elements/           # Reusable UI (Container, ContentBox, FieldBox, Contact…)
+│   │   └── art/                # Decorative / animated illustrations (Rocket, Moon, Stars…)
+│   ├── hooks/                  # useParallax, useSection, etc.
+│   ├── providers/              # SectionProvider, FormProvider
+│   ├── images/                 # Site imagery
+│   └── types/                  # Shared TypeScript types
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 ```
 
-## Installation
+## Getting Started
 
-To get started with this project, clone the repository and install the dependencies:
+Clone and install:
 
 ```bash
 git clone <repository-url>
-cd my-vite-react-router-app
+cd bbl-redux
 npm install
 ```
 
-## Development
-
-To start the development server, run:
+### Development
 
 ```bash
 npm run dev
 ```
 
-This will start the Vite development server and open the application in your default browser.
+Starts the Vite dev server with HMR.
 
-## Building for Production
-
-To build the application for production, run:
+### Production build
 
 ```bash
 npm run build
 ```
 
-This will create an optimized build of your application in the `dist` directory.
+Outputs an optimized build to `dist/`.
 
-## Usage
+### Preview the production build
 
-You can navigate to the home page and explore the application. If you try to access an undefined route, you will be redirected to the Not Found page.
+```bash
+npm run preview
+```
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
