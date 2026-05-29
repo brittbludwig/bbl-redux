@@ -1,4 +1,5 @@
 export { Contact }  from './Contact'
+export { Container }  from './Container'
 export { ContentBox }  from './ContentBox'
 export { FieldBox }  from './FieldBox'
 export { Filter }  from './Filter'

@@ -4,6 +4,7 @@ export type FormFields = {
   'section-1': string;
   'section-2': string;
   'section-3': string[];
+  'section-3-filters': string[];
   'section-4': string;
   'section-5': string;
   'section-6': string;
@@ -15,6 +16,7 @@ const initialFormFields: FormFields = {
   'section-1': '',
   'section-2': '',
   'section-3': [],
+  'section-3-filters': [] as string[],
   'section-4': '',
   'section-5': '',
   'section-6': '',

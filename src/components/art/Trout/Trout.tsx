@@ -14,11 +14,13 @@ const Trout = ({ id }: TroutProps) => {
       absolute overflow-hidden top-[75%] -right-62.5 w-62.5 h-32
       ${isActive ? 'animate-trout' : ''}
     `}>
-      <div className="relative">
+      <div className="relative w-full h-full">
         <img
           src={trout}
           alt="trout"
-          className={`absolute top-0 left-0 ${isActive ? 'w-[400%] animate-trout-frames' : 'w-full'}`}
+          className={`absolute top-0 left-0 max-w-none ${
+            isActive ? 'w-[400%] animate-trout-frames' : 'w-full'
+          }`}
         />
       </div>
     </div>

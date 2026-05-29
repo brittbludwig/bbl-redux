@@ -1,6 +1,7 @@
 export { Balloon }  from './Balloon'
 export { Bass }  from './Bass'
 export { Birds }  from './Birds'
+export { Bubbles }  from './Bubbles'
 export { Clouds }  from './Clouds'
 export { Fish }  from './Fish'
 export { Hills }  from './Hills'

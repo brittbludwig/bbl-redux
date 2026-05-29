@@ -1,6 +1,4 @@
 import { Logos } from '../Logos';
-import { ContentItem } from '$types';
-
 interface LinkItem {
   url: string;
   title: string;
@@ -16,7 +14,7 @@ const Links = ({ header = '', content = [] }: LinksProps) => {
   const urls = links.map((item) => item.url);
 
   return (
-    <div className="w-full bg-white/50 rounded-lg text-base p-4">
+    <div className="w-full bg-black/10 backdrop-blur-sm border border-white/20 rounded-lg text-base p-4">
       {header && (
         <h2 className="text-2xl font-medium text-white mb-4">{header}</h2>
       )}
@@ -28,7 +26,7 @@ const Links = ({ header = '', content = [] }: LinksProps) => {
               href={item.url}
               target="_blank"
               rel="noreferrer"
-              className="block mb-2 text-purple-900 hover:text-purple-700 transition-colors duration-200"
+              className="block mb-4 mt-1 text-white underline underline-offset-4 decoration-2 font-medium"
             >
               {item.title}
             </a>

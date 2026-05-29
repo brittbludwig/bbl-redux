@@ -1,1 +1,1 @@
-export const sectionClasses = 'relative w-full h-full min-h-[500px] md:min-h-[700px] portrait:min-h-screen overflow-hidden py-[50px]';
+export const sectionClasses = 'relative w-full h-screen portrait:min-h-screen overflow-hidden p-8';

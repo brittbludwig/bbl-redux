@@ -14,7 +14,7 @@ const FieldBox = ({ fieldText = '', section }: FieldBoxProps) => {
   };
 
   return (
-    <div className="relative w-full pb-6 lg:min-w-[16rem] bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6 shadow-lg">
+    <div className="relative w-full pb-6 lg:min-w-[16rem] bg-black/10 backdrop-blur-sm rounded-xl border border-white/20 p-6 shadow-lg">
       {fieldText && (
         <p className="text-white/80 text-base leading-relaxed">{fieldText}</p>
       )}

@@ -1,41 +1,38 @@
-import { ContentBox, FieldBox } from '../elements';
+import { ContentBox, FieldBox, Container } from '../elements';
 import { Balloon, Clouds } from '../art';
 import { BaseSectionProps } from '$types';
-import { sectionClasses } from '$constants';
 
 const Section4 = ({
   sectionHeader = '',
   sectionContent = [],
   sectionId,
   fieldContent = '',
-}: BaseSectionProps) => {
-  return (
-    <div id={sectionId} className={`${sectionClasses} p-8`}>
-      <Balloon id={sectionId} />
+}: BaseSectionProps) => (
+  <Container
+    id={sectionId}
+    className="bg-linear-to-b from-[#fc2ee1] to-[#ff9f04]"
+  >
+    <Balloon id={sectionId} />
 
-      <div className="relative flex flex-wrap items-center justify-center w-full h-full">
+    <Container.Inner className="pb-20 lg:pb-0">
+      <Container.Column width="5/12" lgOrder={1} lgAlign="start">
+        <Container.Panel className="mt-4 mb-auto lg:mb-[40%]">
+          <FieldBox fieldText={fieldContent} section={sectionId} />
+        </Container.Panel>
+      </Container.Column>
 
-        <div className="w-full lg:w-5/12 flex flex-col items-center lg:items-start justify-center lg:min-h-175 order-2 md:order-1">
-          <div className="w-full max-w-lg mt-4 mb-auto lg:mb-[40%]">
-            <FieldBox fieldText={fieldContent} section={sectionId} />
-          </div>
-        </div>
+      <Container.Column width="7/12" lgOrder={2} lgAlign="end">
+        <Container.Panel
+          portrait
+          className="mt-0 mb-auto md:mt-[30%] lg:mt-auto lg:mb-[20%] lg:max-w-[90%]"
+        >
+          <ContentBox header={sectionHeader} content={sectionContent} />
+        </Container.Panel>
+      </Container.Column>
+    </Container.Inner>
 
-        <div className="w-full lg:w-7/12 flex flex-col items-center lg:items-end justify-center lg:min-h-175 order-1 md:order-2">
-          <div className="
-            w-full max-w-lg portrait:mt-8
-            mt-0 mb-auto
-            md:mt-[30%] md:mb-auto
-            lg:mt-auto lg:mb-[20%] lg:max-w-[90%]
-          ">
-            <ContentBox header={sectionHeader} content={sectionContent} />
-          </div>
-        </div>
-      </div>
-
-      <Clouds anchor="left" id={sectionId} />
-    </div>
-  );
-};
+    <Clouds anchor="left" id={sectionId} />
+  </Container>
+);
 
 export default Section4;

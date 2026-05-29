@@ -12,14 +12,13 @@ const ContentBox = ({ header = '', content = [] }: ContentBoxProps) => {
   const objects = content.filter((item) => typeof item === 'object');
 
   return (
-    <div className="w-full max-w-lg bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-6 shadow-lg">
+    <div className="w-full max-w-lg bg-black/10 backdrop-blur-sm rounded-xl border border-white/20 p-6 shadow-lg">
       {header && (
         <h2 className="text-3xl font-medium text-white mb-6 tracking-tight leading-snug">
           {header}
         </h2>
       )}
 
-      {/* String items wrapped together */}
       {strings.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-4">
           {strings.map((item, index) => (
@@ -30,7 +29,6 @@ const ContentBox = ({ header = '', content = [] }: ContentBoxProps) => {
         </div>
       )}
 
-      {/* Object items */}
       {objects.map((item, index) => (
         <span key={index} className="flex flex-wrap items-baseline gap-2 mb-3">
           {Object.values(item as Record<string, string>).map((entry, i) => (

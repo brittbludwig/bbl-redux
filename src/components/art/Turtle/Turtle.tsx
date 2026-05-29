@@ -11,14 +11,16 @@ const Turtle = ({ id }: TurtleProps) => {
 
   return (
     <div className={`
-      absolute overflow-hidden top-[75%] -left-87.5 w-87.5 h-45 -scale-x-100
+      absolute overflow-hidden top-[75%] -left-[350px] w-[350px] h-[180px] -scale-x-100
       ${isActive ? 'animate-turtle' : ''}
     `}>
-      <div className="relative">
+      <div className="relative w-full h-full">
         <img
           src={turtle}
           alt="turtle"
-          className={`absolute top-0 left-0 ${isActive ? 'w-[300%] animate-turtle-frames' : 'w-full'}`}
+          className={`absolute top-0 left-0 max-w-none ${
+            isActive ? 'w-[300%] animate-turtle-frames' : 'w-full'
+          }`}
         />
       </div>
     </div>

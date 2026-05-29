@@ -1,38 +1,33 @@
-import { Links, FieldBox } from '../elements';
+import { Links, FieldBox, Container } from '../elements';
 import { Bass, Fish, Trout, Turtle } from '../art';
 import { LinksSectionProps } from '$types';
-import { sectionClasses } from '$constants';
 
 const Section6 = ({
   sectionHeader = '',
   sectionContent = [],
   sectionId,
   fieldContent = '',
-}: LinksSectionProps) => {
-  return (
-    <div id={sectionId} className={`${sectionClasses} pb-8 md:pb-0`}>
-      <Bass id={sectionId} />
-      <Fish id={sectionId} />
-      <Trout id={sectionId} />
-      <Turtle id={sectionId} />
+}: LinksSectionProps) => (
+  <Container id={sectionId} className="md:pb-0">
+    <Bass id={sectionId} />
+    <Fish id={sectionId} />
+    <Trout id={sectionId} />
+    <Turtle id={sectionId} />
 
-      <div className="relative flex flex-wrap items-center justify-center w-full h-full">
+    <Container.Inner>
+      <Container.Column width="7/12" lgOrder={2}>
+        <Container.Panel size="wide" portrait>
+          <Links header={sectionHeader} content={sectionContent} />
+        </Container.Panel>
+      </Container.Column>
 
-        <div className="w-full lg:w-7/12 flex flex-col items-center justify-center order-1 lg:order-2 lg:min-h-175">
-          <div className="w-full md:w-[80%] portrait:mt-8 [&_a]:text-purple-900 [&_a:hover]:text-purple-900">
-            <Links header={sectionHeader} content={sectionContent} />
-          </div>
-        </div>
-
-        <div className="w-full lg:w-5/12 flex flex-col items-center justify-center order-2 lg:order-1 lg:min-h-175">
-          <div className="w-full md:w-[80%] mt-4">
-            <FieldBox fieldText={fieldContent} section={sectionId} />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  );
-};
+      <Container.Column width="5/12" lgOrder={1}>
+        <Container.Panel size="wide" className="mt-4">
+          <FieldBox fieldText={fieldContent} section={sectionId} />
+        </Container.Panel>
+      </Container.Column>
+    </Container.Inner>
+  </Container>
+);
 
 export default Section6;

@@ -1,7 +1,6 @@
 import { Clouds, Plane } from '../art';
-import { SkillBox, Filter } from '../elements';
+import { SkillBox, Filter, Container } from '../elements';
 import { BaseSectionProps, Skill } from '$types';
-import { sectionClasses } from '$constants';
 
 interface Section3Props extends BaseSectionProps {
   filterHeader?: string;
@@ -12,21 +11,19 @@ const Section3 = ({
   sectionContent = [],
   sectionId,
   filterHeader = '',
-}: Section3Props) => {
-  return (
-    <div id={sectionId} className={sectionClasses}>
-      <Clouds anchor="left" id={sectionId} />
-      <Clouds anchor="right" id={sectionId} />
-      <Plane id={sectionId} />
+}: Section3Props) => (
+  <Container id={sectionId}>
+    <Clouds anchor="left" id={sectionId} />
+    <Clouds anchor="right" id={sectionId} />
+    <Plane id={sectionId} />
 
-      <div className="flex items-center justify-center w-full md:max-w-[50%] md:m-auto h-full py-16">
-        <div className="flex flex-col items-center justify-center w-full">
-          <SkillBox header={sectionHeader}  skills={sectionContent as Skill[]}  />
-          <Filter header={filterHeader}  skills={sectionContent as Skill[]}  />
-        </div>
-      </div>
-    </div>
-  );
-};
+    <Container.Inner className="py-16">
+      <Container.Column>
+        <SkillBox header={sectionHeader} skills={sectionContent as Skill[]} />
+        <Filter header={filterHeader} skills={sectionContent as Skill[]} />
+      </Container.Column>
+    </Container.Inner>
+  </Container>
+);
 
 export default Section3;

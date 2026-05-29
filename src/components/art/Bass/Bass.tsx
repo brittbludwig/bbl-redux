@@ -11,14 +11,16 @@ const Bass = ({ id }: BassProps) => {
 
   return (
     <div className={`
-      absolute overflow-hidden top-[20%] -left-[250px] w-[250px] h-[269px]
+      absolute overflow-hidden top-[20%] -left-62.5 w-62.5 h-67.25
       ${isActive ? 'animate-bass' : ''}
     `}>
-      <div className="relative">
+      <div className="relative w-full h-full">
         <img
           src={bass}
           alt="bass"
-          className={`absolute top-0 left-0 ${isActive ? 'w-[400%] animate-bass-frames' : 'w-full'}`}
+          className={`absolute top-0 left-0 max-w-none ${
+            isActive ? 'w-[400%] animate-bass-frames' : 'w-full'
+          }`}
         />
       </div>
     </div>

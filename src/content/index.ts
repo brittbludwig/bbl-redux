@@ -54,115 +54,47 @@ const content: SectionContent[]  = [
     formText: "Filter",
     content: [
       {
+        name: "JavaScript (ES6+)",
+        type: "languages",
+      },
+      {
+        name: "TypeScript",
+        type: "languages",
+      },
+      {
         name: "HTML",
         type: "languages",
       },
       {
-        name: "Javascript (ES5 & ES6)",
-        type: "languages",
-      },
-      {
-        name: "JSON",
-        type: "languages",
-      },
-      {
-        name: "AJAX",
-        type: "languages",
-      },
-      {
-        name: "CSS",
-        type: "languages",
-      },
-      {
-        name: "PHP",
-        type: "languages",
-      },
-      {
-        name: "MySQL",
-        type: "languages",
-      },
-      {
-        name: "NodeJs",
-        type: "languages",
-      },
-      {
-        name: "XSL/XML",
+        name: "CSS / SCSS",
         type: "languages",
       },
       {
         name: "React",
-        type: "libraries",
+        type: "frameworks",
       },
       {
         name: "Vue",
-        type: "libraries",
+        type: "frameworks",
       },
       {
-        name: "Typescript",
-        type: "libraries",
+        name: "Angular",
+        type: "frameworks",
       },
       {
-        name: "jQuery",
-        type: "libraries",
+        name: "Node.js",
+        type: "frameworks",
       },
       {
-        name: "Material UI",
-        type: "libraries",
-      },
-      {
-        name: "ReactStrap",
-        type: "libraries",
-      },
-      {
-        name: "Angular (1, 2, 8)",
-        type: "libraries",
-      },
-      {
-        name: "Sass/SCSS",
-        type: "libraries",
-      },
-      {
-        name: "Gulp",
-        type: "libraries",
-      },
-      {
-        name: "Stylus",
-        type: "libraries",
-      },
-      {
-        name: "Bootstrap",
-        type: "libraries",
-      },
-      {
-        name: "Foundation",
-        type: "libraries",
-      },
-      {
-        name: "Greensock/TweenMax",
-        type: "libraries",
-      },
-      {
-        name: "Snap.svg",
-        type: "libraries",
-      },
-      {
-        name: "Google Tag Manager",
+        name: "GraphQL",
         type: "apis",
       },
       {
-        name: "Youtube API",
+        name: "REST APIs",
         type: "apis",
       },
       {
-        name: "Facebook API",
-        type: "apis",
-      },
-      {
-        name: "Twitter API",
-        type: "apis",
-      },
-      {
-        name: "PayPal API",
+        name: "WebSockets",
         type: "apis",
       },
       {
@@ -170,101 +102,70 @@ const content: SectionContent[]  = [
         type: "apis",
       },
       {
-        name: "Mass Relevance API",
+        name: "Stripe API",
         type: "apis",
       },
       {
+        name: "Material UI",
+        type: "libraries",
+      },
+      {
+        name: "Bootstrap",
+        type: "libraries",
+      },
+      {
+        name: "GSAP",
+        type: "libraries",
+      },
+      {
         name: "Salesforce",
-        type: "crms",
+        type: "platforms",
       },
       {
-        name: "Wordpress",
-        type: "crms",
-      },
-      {
-        name: "Gigya",
-        type: "crms",
-      },
-      {
-        name: "Contentful",
-        type: "crms",
+        name: "WordPress",
+        type: "platforms",
       },
       {
         name: "Shopify",
-        type: "crms",
+        type: "platforms",
       },
       {
-        name: "Squarespace",
-        type: "crms",
-      },
-      {
-        name: "Teamsite",
-        type: "crms",
-      },
-      {
-        name: "Photoshop",
-        type: "programs",
-      },
-      {
-        name: "Sketch",
-        type: "programs",
-      },
-      {
-        name: "Zeplin",
-        type: "programs",
-      },
-      {
-        name: "Scrum",
-        type: "programs",
-      },
-      {
-        name: "Agile",
-        type: "programs",
-      },
-      {
-        name: "Jira",
-        type: "programs",
-      },
-      {
-        name: "Git",
-        type: "programs",
-      },
-      {
-        name: "Scrum Master",
-        type: "certifications",
-      },
+        name: "Agile / Scrum",
+        type: "methodologies",
+      },  
       {
         name: "SAFe Agilist",
         type: "certifications",
       },
-    ],
+      {
+        name: "Git",
+        type: "tools",
+      },
+      {
+        name: "GitHub",
+        type: "tools",
+      },
+      {
+        name: "GitLab",
+        type: "tools",
+      },
+      {
+        name: "Jira",
+        type: "tools",
+      },
+      {
+        name: "Confluence",
+        type: "tools",
+      },
+    ]
   },
   {
-    name: "Clients",
+    name: "Current Work",
     id: "section-4",
-    header: "Clients",
+    header: "Currently at Bluebeam",
     formText: "Pick an adjective",
     content: [
-      "Walmart",
-      "Humana",
-      "PayPal",
-      "Disney",
-      "State of California",
-      "Republic Services",
-      "Amgen",
-      "Casey's General Store",
-      "Warner Bros",
-      "Starz",
-      "Universal",
-      "Sony",
-      "IMAX",
-      "Fremantle",
-      "Dignity Memorial",
-      "20th Century Fox",
-      "The Recording Company/Grammys",
-      "Magical Elves Productions",
-      "Paradox Entertainment",
-      "Burke Williams",
+      "At Bluebeam, I led a major refactor of the Bluebeam Cloud web app architecture that reduced JavaScript loaded by the application by 50% and improved test performance from 96+ seconds with significant flakiness to 28 seconds with stable, reliable results. I also managed a 9-month migration and refactor of more than 35,000 lines of code that received special recognition from leadership. In addition, I built the UI for a new CMS in 4 weeks, rebuilding 30 screens on our component library, and implemented a new templating system that streamlined content creation across the platform. I currently co-lead the Front-End Guild, mentor interns, and have represented Bluebeam as a speaker at a “She Codes” event at California State Polytechnic University, Pomona.",
     ],
   },
   {
@@ -273,7 +174,7 @@ const content: SectionContent[]  = [
     header: "About Me",
     formText: "Pick a noun",
     content: [
-      "I've been making websites for over half of my life. What started as a hobby as a teenager as turned into over a decade-long career in which I've worked on some amazing projects for top clients, and made a lot of life-long friends along the way. I'm self-taught, and I've been able to develop and hone my skills through many challenging work experiences. Outside of work, I live with my real-life Garfield cat, Reggie, I'm a human encyclopedia when it comes to music, and I love a totally radical sunset.",
+      "I’m a self-taught front-end engineer with over a decade of experience building modern web applications, leading large-scale refactors, and improving performance across enterprise platforms and customer-facing products. Over the course of my career, I’ve worked with cross-functional teams to deliver scalable UI systems, CMS platforms, and complex application migrations for high-profile clients and products.I’m especially interested in front-end architecture, performance optimization, and creating maintainable systems that improve both developer experience and product reliability. Beyond engineering work, I enjoy helping shape engineering standards and collaboration across teams.",
     ],
   },
   {
@@ -289,6 +190,10 @@ const content: SectionContent[]  = [
       {
         url: "https://www.linkedin.com/in/brittany-ludwig/",
         title: "LinkedIn",
+      },
+      {
+        url: "https://brittanyludwig.com/2020",
+        title: "2020 Portfolio",
       },
     ],
   },

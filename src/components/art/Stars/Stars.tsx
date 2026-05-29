@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { randomNumber } from '$utils';
-import { useStars, useBackgroundScroll } from '$hooks';
+import { useStars, useParallax } from '$hooks';
 import star1 from '$images/star1.png';
 import star2 from '$images/star2.png';
 import star3 from '$images/star3.png';
@@ -13,6 +13,7 @@ const STARS = [star1, star2, star3, star4, star5, star6, star7];
 
 interface StarProps {
   children?: React.ReactNode;
+  opacity?: number;
 }
 
 const generateStarStyles = (index: number, total: number): React.CSSProperties => {
@@ -20,7 +21,7 @@ const generateStarStyles = (index: number, total: number): React.CSSProperties =
   const isShootingStar = randomNumber(0, total) === index;
 
   return {
-    top: `${randomNumber(0, 95)}%`,
+    top: `${randomNumber(0, 60)}%`,
     left: `${randomNumber(0, 99)}%`,
     position: 'absolute',
     animation: `pulse 10s linear ${randomNumber(5, 60)}s infinite forwards`,
@@ -31,20 +32,9 @@ const generateStarStyles = (index: number, total: number): React.CSSProperties =
   };
 };
 
-const DARK_COLORS = ['#324aff', '#7123ff', '#a821ff'];
-const LIGHT_COLORS = ['#fc2ee1', '#ff7044', '#ff9f04', '#ffc104'];
-
-const getStarOpacity = (bgColor: string): number => {
-  if (DARK_COLORS.includes(bgColor)) return 1;
-  const lightIndex = LIGHT_COLORS.indexOf(bgColor);
-  if (lightIndex === -1) return 1;
-  return Math.max(0.1, 1 - (lightIndex / LIGHT_COLORS.length));
-};
-
-const Stars = ({ children }: StarProps) => {
+const Stars = ({ children, opacity = 1 }: StarProps) => {
   const { starDensity } = useStars();
-  const bgColor = useBackgroundScroll();
-  const starOpacity = getStarOpacity(bgColor);
+  const { ref, offset } = useParallax<HTMLDivElement>(0.3);
 
   const stars = useMemo(() => {
     const starArray = Array.from({ length: starDensity }, () => STARS).flat();
@@ -56,10 +46,14 @@ const Stars = ({ children }: StarProps) => {
   }, [starDensity]);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-linear-to-b from-[#324aff] to-[#fc2ee1] overflow-hidden">
       <div
-        className="absolute inset-0 overflow-hidden transition-opacity duration-700"
-        style={{ opacity: starOpacity }}
+        ref={ref}
+        className="absolute inset-y-[-40%] inset-x-0 overflow-hidden transition-opacity duration-700 will-change-transform"
+        style={{
+          opacity,
+          transform: `translate3d(0, ${offset}px, 0)`,
+        }}
       >
         {stars.map(({ id, src, styles }) => (
           <img key={id} src={src} style={styles} alt="" />

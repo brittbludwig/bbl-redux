@@ -5,10 +5,11 @@ interface SkillButtonProps {
   name?: string;
 }
 
+const SKILLS_KEY = 'section-3';
+
 const SkillButton = ({ name = '' }: SkillButtonProps) => {
   const { formFields, updateField } = useForm();
-  const { activeSection } = useSection();
-  const selectedSkills = formFields[activeSection] as string[];
+  const selectedSkills = formFields[SKILLS_KEY] as string[];
   const isSelected = selectedSkills?.includes(name);
 
   const handleClick = () => {
@@ -16,7 +17,7 @@ const SkillButton = ({ name = '' }: SkillButtonProps) => {
       ? selectedSkills.filter((s) => s !== name)
       : [name, ...selectedSkills];
 
-    updateField(activeSection, updated);
+    updateField(SKILLS_KEY, updated);
   };
 
   return (

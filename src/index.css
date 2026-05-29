@@ -1,105 +1,121 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-rocket-diagonal: rocketDiagonal 5s linear forwards;
-
-  @keyframes rocketDiagonal {
-    0% {
-      bottom: -10%;
-      left: -20%;
-      transform: rotate(90deg);
-    }
-    20% {
-      transform: rotate(73deg);
-    }
-    50% {
-      transform: rotate(45deg);
-    }
-    100% {
-      bottom: 110%;
-      left: 150%;
-      transform: rotate(30deg);
-    }
-  }
-
   --animate-balloon: balloonRight 15s linear forwards;
-  --animate-balloon-sway: ballooonSway 3s ease-in-out infinite;
-
-  @keyframes balloonRight {
-    0% {
-      right: -150px;
-      bottom: 0%;
-      transform: scale(0.6);
-    }
-    30% {
-      right: 10%;
-      bottom: 10%;
-      transform: scale(0.8);
-    }
-    60% {
-      right: 40%;
-      bottom: 30%;
-      transform: scale(1);
-    }
-    100% {
-      right: 120%;
-      bottom: 70%;
-      transform: scale(1.4);
-    }
-  }
-
-  @keyframes balloonSway {
-    0% { rotate: -3deg; }
-    50% { rotate: 3deg; }
-    100% { rotate: -3deg; }
-  }
 
   --animate-birds: inFromRight 15s linear forwards;
   --animate-birds-frames: twoFrameAnimation 0.4s steps(2) infinite;
 
-  @keyframes inFromRight {
-    0% {
-      right: -380px;
-    }
-    100% {
-      right: 110%;
-    }
-  }
+  --animate-submarine: inFromRight 8s linear forwards;
+
+  --animate-fish: moveFromLeftFlip 8s linear forwards;
+  --animate-fish-frames: twoFrameAnimation 0.2s steps(2) infinite;
 
   --animate-bass: inFromLeft 6s linear 4s forwards;
   --animate-bass-frames: fourFrameAnimation 0.8s steps(4) infinite;
 
-  @keyframes twoFrameAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  --animate-rocket-diagonal: rocketDiagonal 5s linear forwards;
 
-  --animate-fish-frames: twoFrameAnimation 0.2s steps(2) infinite;
-  --animate-fish: moveFromLeftFlip 8s linear forwards;
-  --animate-trout-frames: fourFrameAnimation 0.8s steps(4) infinite;
   --animate-trout: inFromRight 8s linear forwards;
-  --animate-turtle-frames: threeFrameAnimation 0.6s steps(3) infinite;
+  --animate-trout-frames: fourFrameAnimation 0.8s steps(4) infinite;
+
   --animate-turtle: inFromLeft 20s linear 4s forwards;
+  --animate-turtle-frames: threeFrameAnimation 0.6s steps(3) infinite;
+}
 
-  @keyframes inFromLeft {
-    0% { left: -350px; }
-    100% { left: 110%; }
-  }
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-  @keyframes threeFrameAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-66.666%); }
-  }
+@keyframes pulse {
+  0%   { transform: rotate(0deg)  scale(1); }
+  10%  { transform: rotate(0deg)  scale(1.2); }
+  30%  { transform: rotate(0deg)  scale(1); }
+  50%  { transform: rotate(30deg) scale(1.2); }
+  60%  { transform: rotate(0deg)  scale(1); }
+  100% { transform: rotate(0deg)  scale(1); }
+}
 
-  @keyframes fourFrameAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-75%); }
-  }
+@keyframes inFromLeft {
+  0%   { left: -800px; }
+  100% { left: 120%; }
+}
 
-  @keyframes moveFromLeftFlip {
-    0% { right: -250px; }
-    100% { right: 110%; }
+@keyframes inFromRight {
+  0%   { right: -500px; }
+  100% { right: 120%; }
+}
+
+@keyframes planeLeft {
+  0%   { left: -500px; }
+  100% { left: 120%; }
+}
+
+@keyframes moveFromLeftFlip {
+  0%   { right: -100%; transform: scaleX(1); }
+  20%  { right: 0%;    transform: scaleX(1); }
+  40%  { right: 25%;   transform: scaleX(1); }
+  59%  {               transform: scaleX(1); }
+  60%  { right: 50%;   transform: scaleX(-1); }
+  90%  { right: -300%; transform: scaleX(-1); }
+  100% { right: -300%; transform: scaleX(-1); }
+}
+
+@keyframes rocketDiagonal {
+  0% {
+    bottom: -10%;
+    left: -20%;
+    transform: rotate(90deg);
   }
+  20% {
+    transform: rotate(73deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    bottom: 110%;
+    left: 150%;
+    transform: rotate(38deg) scale(0.15);
+  }
+}
+
+@keyframes balloonRight {
+  0% {
+    bottom: -50%;
+    right: -50%;
+    transform: rotate(10deg) scale(0.5);
+  }
+  10% {
+    bottom: 20%;
+    transform: rotate(-10deg) scale(1);
+  }
+  40% {
+    right: 50%;
+    transform: rotate(10deg) scale(1.5);
+  }
+  80% {
+    bottom: 50%;
+    transform: rotate(-10deg) scale(1);
+  }
+  100% {
+    bottom: 70%;
+    right: 200%;
+    transform: rotate(10deg) scale(0);
+  }
+}
+
+@keyframes twoFrameAnimation {
+  100% { left: -200%; }
+}
+
+@keyframes threeFrameAnimation {
+  100% { left: -300%; }
+}
+
+@keyframes fourFrameAnimation {
+  100% { left: -400%; }
 }
 
 body {
