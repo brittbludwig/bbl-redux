@@ -1,1 +1,0 @@
-export const sectionClasses = 'relative w-full h-screen portrait:min-h-screen overflow-hidden p-8';

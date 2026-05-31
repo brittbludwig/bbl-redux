@@ -14,9 +14,9 @@ const Section4 = ({
   >
     <Balloon id={sectionId} />
 
-    <Container.Inner className="pb-20 lg:pb-0">
+    <Container.Inner className="pb-40 lg:pb-0">
       <Container.Column width="5/12" lgOrder={1} lgAlign="start">
-        <Container.Panel className="mt-4 mb-auto lg:mb-[40%]">
+        <Container.Panel className="mt-4 mb-auto lg:mb-[40%] md:pb-20">
           <FieldBox fieldText={fieldContent} section={sectionId} />
         </Container.Panel>
       </Container.Column>

@@ -17,7 +17,7 @@ const Section5 = ({
     <Hills anchor="left" id={sectionId} />
     <Hills anchor="right" id={sectionId} />
 
-    <Container.Inner className="pb-12">
+    <Container.Inner className="pb-16 md:pb-12 lg:pb-12 sm:landscape:pt-8">
       <Container.Column width="7/12" align="start">
         <div className="portrait:mt-8 relative m-auto">
           <ContentBox header={sectionHeader} content={sectionContent} />

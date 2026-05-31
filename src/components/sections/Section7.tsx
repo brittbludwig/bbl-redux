@@ -29,9 +29,9 @@ const Section7 = ({
       </Container.Column>
     </Container.Inner>
 
-    <p className="text-white text-[0.5rem] text-center absolute bottom-0 w-full [&_a]:text-purple-900 [&_a:hover]:text-purple-900">
+    <div className="text-white text-[0.5rem] text-center absolute bottom-0 left-[25%] w-1/2 [&_a]:text-purple-900 [&_a:hover]:text-purple-900 m-auto">
       © {new Date().getFullYear()} Brittany Ludwig
-    </p>
+    </div>
   </Container>
 );
 

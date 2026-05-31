@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-import { sectionClasses } from '$constants';
-
 interface ContainerProps {
   id: string;
   className?: string;
@@ -8,7 +6,10 @@ interface ContainerProps {
 }
 
 const Container = ({ id, className = '', children }: ContainerProps) => (
-  <div id={id} className={`${sectionClasses} ${className}`}>
+  <div
+    id={id}
+    className={`relative w-full min-h-screen overflow-hidden p-8 flex flex-col ${className}`}
+  >
     {children}
   </div>
 );
@@ -20,7 +21,7 @@ interface InnerProps {
 
 const Inner = ({ className = '', children }: InnerProps) => (
   <div
-    className={`relative flex flex-wrap items-center justify-center w-full h-full max-w-5xl mx-auto ${className}`}
+    className={`relative flex flex-1 flex-wrap items-center justify-center w-full max-w-5xl mx-auto ${className}`}
   >
     {children}
   </div>

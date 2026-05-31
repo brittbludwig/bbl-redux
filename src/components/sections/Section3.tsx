@@ -17,7 +17,7 @@ const Section3 = ({
     <Clouds anchor="right" id={sectionId} />
     <Plane id={sectionId} />
 
-    <Container.Inner className="py-16">
+    <Container.Inner className="py-16 sm:landscape:py-50">
       <Container.Column>
         <SkillBox header={sectionHeader} skills={sectionContent as Skill[]} />
         <Filter header={filterHeader} skills={sectionContent as Skill[]} />

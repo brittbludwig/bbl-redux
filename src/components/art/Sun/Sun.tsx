@@ -19,7 +19,7 @@ const Sun = ({ id }: SunProps) => {
     <div
       ref={ref}
       style={{ transform: `translate3d(0, ${offset}px, 0)` }}
-      className="absolute bottom-0 left-1/2 w-full -ml-[50%] will-change-transform"
+      className="absolute -bottom-5 lg:bottom-0 left-1/2 w-full ml-[-50%] will-change-transform"
     >
       <div
         className={`
